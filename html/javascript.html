@@ -267,6 +267,7 @@
 			position: fixed;
 			bottom: 0;
 			background-color: #000;
+			transition: 0.3s;
 		}
 
 		.cookie .cookieleft {
@@ -455,7 +456,15 @@
 			<a href="#" class="dis">Disable Cookies</a>
 			<a href="#" class="acc">ACCEPT COOKIES AND CLOSE THIS MESSAGE</a>
 			<script type="text/javascript">
-				
+				var dis = document.querySelector('.dis');
+				var acc = document.querySelector('.acc');
+				var cook = document.querySelector('.cookie');
+				dis.onclick = function(){
+					cook.style.height = '0';
+				}
+				acc.onclick = function(){
+					cook.style.height = '0';
+				}
 			</script>
 		</div>
 	</div>
