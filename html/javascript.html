@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript.com</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: #000;
+		}
+
+		.header {
+			height: 120px;
+			background-color: #000;
+		}
+
+		.header div a img {
+			height: 65px;
+			padding-left: 40px;
+			padding-top: 22px;
+		}
+
+		.header div {
+			float: left;
+		}
+
+		.header_navs {
+			    background: #000;
+             	color: #222;
+    			cursor: auto;
+    			font-style: normal;
+    			font-weight: 400;
+    			line-height: 1.5;
+    			position: absolute;
+    			float: none;
+    			top:40px;
+    			right: 40px;
+		}
+
+		.try {
+			height: 45px;
+			background: #EC008C;
+			font-size: 14px;
+			font-weight: 700;
+			font-style: "gotham ssm a";
+			line-height: 45px;
+			color: white;
+			text-decoration: none;
+			text-align:center;
+			padding: 0 35px;
+			display: inline-block;
+			border-radius: 5px;
+			transition: box-shadow 0.3s;
+		}
+
+		.try:hover {
+			background: linear-gradient(right,#EC008C,red);
+			background: -webkit-linear-gradient(right,#EC008C,red);
+			background: -moz-linear-gradient(right,#EC008C,red);
+			background: -ms-linear-gradient(right,#EC008C,red);
+			box-shadow: 0 4px 4px 1px rgba(0,0,0,0.3);
+		}
+
+		.header_link {
+			color: #fff;
+    		margin-left: 50px;
+    		text-decoration: none;
+		}
+
+		.header_link:hover {
+			text-decoration: underline;
+		}
+
+
+		.main {
+			height: 600px; 
+			background: rgba(0,0,0,0.9);
+			color: white;
+			text-align: center;
+			position: relative;
+		}
+
+		.main h2 {
+			font-size: 20px;
+			letter-spacing: 2px;
+			color: rgba(255,255,255,0.4);
+			margin: 100px auto 10px;
+			display: inline-block;
+		}
+
+		.main h1 {
+			font-size: 60px;
+			letter-spacing: 2px;
+			color: white;
+		}
+
+		.main .infobox {
+			height: 80px;
+			width: 700px;
+			margin: 30px auto;
+		}
+
+		.main .info {
+			font-weight: 200;
+            font-size: 18px;
+            line-height: 30px;
+		}
+
+		.main code {
+			color: #000;
+			text-align: center;
+			background-color: white;
+			padding: 7px 7px 3px;
+			border-radius: 2px;
+		}
+
+		.main .in {
+			background: white;
+            height: 30px;
+            width: 700px;
+            padding: 10px 10px 15px 40px;
+            border: 0;
+            color: #000;
+            font-size: 22px;
+            font-weight: 500;
+            font-family: monospace;
+            margin: 0 auto;
+            outline: 0;
+            /*transition: 0.5s;*/
+		}
+
+		.textbox {
+            margin: 0 auto;
+            position: relative;
+		}
+
+		.textbox p {
+			position: absolute;
+			color: #000;
+			font-size: 35px;
+			height: 50px;
+			line-height: 50px;
+			left: 50%;
+			margin-left: -365px;
+			-webkit-user-select:none;
+    		-moz-user-select:none;
+    		-ms-user-select:none;
+   			user-select:none;
+		}
+
+		.textbox .button {
+			position: absolute;
+			height: 30px;
+			line-height: 30px;
+			left: 50%;
+			top: 7px;
+			margin-left: 230px;
+			text-decoration: none;
+			background-color: rgba(0,0,0,0.4);
+			border-radius: 5px;
+			padding: 5px;
+			color: #fff;
+			display: none;
+		}
+
+		.recommd {
+			height: 400px; 
+			text-align:center;
+			background: #000;
+			letter-spacing:3px;
+		}
+
+		.recommd1,
+		.recommd2,
+		.recommd3 {
+			height: 100%;
+			width: 33.3%;
+			position: relative;
+			float: left;
+		}
+
+		.recommd .recommd1 {
+			background: url(images/1.png) no-repeat;	
+			background-position: center;
+		}
+
+		.recommd .recommd2 {
+			background: url(images/2.png) no-repeat;	
+			background-size: 600px;
+			background-position: center;
+		}
+
+		.recommd .recommd3 {
+			background: url(images/3.png) no-repeat;	
+			background-size: 600px;
+			background-position: center;
+		}
+
+		.blur {
+			height: 100%;
+			width: 100%;
+			background:rgba(0,0,0,0.4);
+			position: absolute;
+		}
+
+		.intro h3{
+			font-size: 16px;
+			color: rgba(255,255,255,0.4);
+			padding: 0 120px;
+		}
+
+		.intro h5 {
+			font-size: 30px;
+			font-weight: 2;
+			color: white;
+			padding: 20px 90px;
+		}
+
+		.fotter {
+			height: 100px;
+			background-color: #000;
+			color: white;
+			font-size: 12px;
+		}
+
+		.fotter .leftcontent {
+			padding-top: 30px;
+    		padding-left: 40px;
+            float: left;
+		}
+
+		.fotter .leftcontent img {
+			height: 40px;
+			float: left;
+
+		}
+
+		.fotter .leftcontent .copyright {
+			float: left;
+    		font-size: 12px;
+    		color: #aaa;
+    		padding-top: 14px;
+   			padding-left: 20px;
+		}
+
+		.fotter .rightcontent {
+			float: right;
+		}
+
+		.fotter .rightcontent .fotter_link{
+			text-decoration: none;
+			line-height: 100px;
+			color: white;
+			padding: 20px;
+		}
+
+		.fotter .rightcontent .fotter_link:hover{
+			text-decoration: underline;
+		}
+
+		.cookie {
+			height: 80px;
+			width: 100%;
+			position: fixed;
+			bottom: 0;
+			background-color: #000;
+		}
+
+		.cookie .cookieleft {
+			height: 80px;
+			width: 50%;
+			padding-left: 10px;
+			padding-top: 20px;
+			float: left;
+		}
+
+		.cookie p{
+			padding-left: 10px;
+			color: #fff;
+			float: left;
+			font-size: 12px;
+		    line-height: 14px;
+		    font-weight: 200;
+		    letter-spacing: 1px;
+		}
+
+		.cookie p a{
+			color: #fff;
+			font-size: 12px;
+		    line-height: 14px;
+		    font-weight: 200;
+		    text-decoration: none;
+		}
+
+		.cookie p a:hover{
+		    text-decoration: underline;
+		}
+
+		.cookie .cookieright {
+			height: 80px;
+			width: 40%;
+			float: right;
+			text-align: right;
+			padding-right: 20px;
+		}
+
+		.cookie .cookieright a{
+			text-decoration: none;
+		}
+
+		.cookie .cookieright .dis{
+			font-size: 10px;
+			line-height: 80px;
+			color: rgba(255,255,255,0.6);
+			margin-right: 10px; 
+		}
+
+		.cookie .cookieright .dis:hover{
+			text-decoration: underline;
+		}
+
+		.cookie .cookieright .acc{
+			height: 40px;
+			display: inline-block;
+			padding: 0 20px;
+			line-height: 40px;
+			font-size: 12px;
+			color: #EC008C;
+			background-color: #000;
+			border: 1px solid #EC008C;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="header">
+		<div><a href="#"><img src="images/js-logo.png"></a></div>	
+
+       
+
+		<div class="header_navs">
+			<a href="#" class="try">TRY JAVASCRIPT</a>
+			<a href="#" class="header_link">Learn</a>
+			<a href="#" class="header_link">Resources</a>
+			<a href="#" class="header_link">About</a>
+		</div>
+	</div>
+
+
+	<div class="main">
+		<div class="maininfo">
+			<h2>REDAY TO TRY</h2>
+			<h1>JavaScript?</h1>
+			<div class="infobox">
+				<p class="info">Begin learning here by typing in your first name surrounded by quotation marks, and ending with a semicolon. For example, you could type the name <code>"Jamie";</code>  and then hit enter.</p>
+			</div>
+			<div class="textbox">
+				<p class = "p">></p>
+				<input type="text" class="in">
+				<a href="#" class="button">Next Challenge</a>
+				<script type="text/javascript">
+					var p = document.querySelector('.p');
+					var inp = document.querySelector('.in');
+					var btn = document.querySelector('.button');
+					inp.onkeyup  = function(){
+						if(event.keyCode == 13){
+							if(/^".*";$/.test(inp.value)){
+								p.innerHTML = '√';
+	                        	p.style.fontSize = '25px';
+	                        	p.style.color = '#fff';
+	                        	btn.style.display = 'block';
+	                        	inp.style.transition = '0.5s';
+	                        	inp.style.backgroundColor = '#9BC850E6';
+							}
+							else{
+								var id = setInterval(frame, 20);
+								var flag = -1;
+							    function frame() {
+							        if (flag ==  255) {
+							             clearInterval(id);
+							        } else {
+							            flag += 8; 
+							            inp.style.backgroundColor = 'rgb(255,' + flag + ',' + flag + ')';
+							        }
+							    }
+							}
+                        }                       
+					}
+				</script>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="recommd">
+		<div class="recommd1">
+			<div class="blur">
+				<div style="height: 80px"></div>
+				<div class="intro">
+				<h3>INTRODUCTION</h3>
+				<h5>Courses and paths to get you going</h5>
+				<a href="#" class="try">GET START</a>
+				</div>
+			</div>		
+		</div>
+		<div class="recommd2">
+			<div class="blur">
+				<div style="height: 80px"></div>
+				<div class="intro">
+				<h3>SKILL ASSESSMENT</h3>
+				<h5>Know where your skills stand</h5>
+				<a href="#" class="try">MEASURE YOUR SKILLS</a>
+				</div>
+			</div>
+		</div>
+		<div class="recommd3">
+			<div class="blur">
+				<div style="height: 80px"></div>
+				<div class="intro">
+				<h3>INTRODUCTION</h3>
+				<h5>See where Javascript ranks</h5>
+				<a href="#" class="try">DIVE INTO THE DATA</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="fotter">
+		<div class="leftcontent">
+			<a href="#"><img src="images/js-logo.png"></a>
+			<p class="copyright">© 2016 - 2020 JavaScript.com</p>
+		</div>
+
+		<div class="rightcontent">
+			<a href="#" class="fotter_link">Learn</a>
+			/
+			<a href="#" class="fotter_link">Resources</a>
+			/
+			<a href="#" class="fotter_link">About</a>
+		</div>
+	</div>
+
+	<div class="cookie">
+		<div class="cookieleft">
+			<p>We use cookies to make interactions with our websites and services easy and meaningful. For more information about the cookies we use or to find out how you can disable cookies, <a href="#">click here.</a></p>
+		</div>
+		<div class="cookieright">
+			<a href="#" class="dis">Disable Cookies</a>
+			<a href="#" class="acc">ACCEPT COOKIES AND CLOSE THIS MESSAGE</a>
+			<script type="text/javascript">
+				
+			</script>
+		</div>
+	</div>
+
+</body>
+</html>
+
